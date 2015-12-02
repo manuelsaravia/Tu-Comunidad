@@ -1,0 +1,139 @@
+
+
+th{
+    text-align: center;
+}
+
+tr{
+    text-align: center;
+}
+
+.red{
+    color: red;
+}
+
+.row{
+    margin: auto 0!important;
+}
+
+.acomodar{
+    margin: auto 0!important;
+}
+
+.blue{
+    color: blue;
+}
+
+.black{
+    color: black;
+}
+
+.green{
+    color: green;
+}
+
+.greendown{
+    color: darkgreen;//#255625
+}
+
+.registro{
+    background-color: #31708f;
+}
+
+.inputcolor{
+    background-color: beige;
+    color: #1b6d85;
+}
+
+.white{
+    color: white;
+    font-family: "Harrington", cursive;
+}
+
+.white-registro{
+    color: aliceblue;
+}
+
+.principales{
+    background-color: #E2E8F4;//F2F2F2
+}
+
+.paneles{
+    background-color: #f8f8f8;
+}
+
+.estatico{
+    position: fixed;
+}
+
+.inferior{
+    position: fixed;
+    top: 75%;
+    right: 2%;
+    width: 20%;
+}
+.top-centro{
+    position: fixed;
+    top: 1%;
+    left: 47%;
+    right: 50%;
+    width: 6%;
+}
+.superior{
+    position: fixed;
+    top: 10%;
+    right: 2%;
+    width: 20%;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#centrar{
+    margin-top: 15%;
+}
+
+#footer{
+    border-top: 3px solid #F2F2F2 ;
+    width: 80%;
+    margin:0 auto;
+    margin-top: 3%;
+    //background-color: #F0D8A4;
+}
+
+#borde-gris{
+    border-color: #969191;
+    border-width: medium;
+    border-style: solid;
+}
+
+#inicio{
+    background-color: transparent; 
+    //opacity: 0.5;
+    border-color: transparent;
+}
+
+#panel-gris{
+    background-color: #DADADA;
+    border-color: #969191;
+    border-width: thin;
+    border-style: solid;
+}
+
+#panel-registro{
+    background-color: transparent;
+    font-size: medium;
+    border-color: transparent;
+}
+
+#panel{
+    margin-top: -100px;
+    margin-left: 0px;
+}
+
+#quieta{
+    position: fixed;
+}
