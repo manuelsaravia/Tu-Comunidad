@@ -19,9 +19,9 @@ import javax.mail.internet.MimeMessage;
 public class ServicioEmail {
     
     //Dirección del servidor smtp, puede cambiarlo a su servidor de su cuenta particular, en el caso de gmail es smtp.gmail.com
-    private final String direccionServidorEmail="smtp.gmail.com";
+    private final String direccionServidorEmail="mail.tucomunidadcolombia.co";
     //Numéro del puerto del servidor smtp, en el caso de gmail es el 587
-    private final String puertoServidor="587";
+    private final String puertoServidor="26";
     private Properties props = new Properties();
     //Dirección del email del usario que envía el mensaje
     private String emailUsuarioEmisor;
@@ -55,6 +55,7 @@ public class ServicioEmail {
         props.setProperty("mail.smtp.port", this.puertoServidor);
         props.setProperty("mail.smtp.user", this.emailUsuarioEmisor);
         props.setProperty("mail.smtp.auth", "true");
+        props.put("mail.smtp.ssl.trust", this.direccionServidorEmail);
     
     }
     
@@ -76,11 +77,15 @@ public class ServicioEmail {
             message.setSubject(asunto);
             message.setText(cuerpoMensaje);
             Transport t = session.getTransport("smtp");
-            t.connect(this.emailUsuarioEmisor, this.claveEmailUsuarioEmisor);
-            t.sendMessage(message, message.getAllRecipients());
-            t.close();
-        } catch (Exception e) {
             
+            t.connect(this.emailUsuarioEmisor, this.claveEmailUsuarioEmisor);
+            System.out.println("conecto");
+            t.sendMessage(message, message.getAllRecipients());
+            System.out.println("envio");
+            t.close();
+            System.out.println("envio el correo");
+        } catch (Exception e) {
+            System.out.println("no lo envio");
             System.err.println(e.getMessage());
             
         }

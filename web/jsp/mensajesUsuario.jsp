@@ -1,6 +1,6 @@
 <%-- 
-    Document   : solicitar
-    Created on : 27/11/2015, 10:18:08 AM
+    Document   : mensajesUsuario
+    Created on : 29/12/2015, 03:05:48 PM
     Author     : Manuel
 --%>
 
@@ -38,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><a href="cargarTabla.jsp?req=NotiImagen-principalUsuario-noticias">Inicio<span class="sr-only">(current)</span></a></li>
-                            
+                            <li><a href="cargarMensajesUsuario">Mensajes</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a><% out.println(session.getAttribute("nombre").toString()); %></a></li>
@@ -104,63 +104,28 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <% if (session.getAttribute("mensajeSolicitud") == null) {
-                        session.setAttribute("mensajeSolicitud", "");
-                    }
-                    out.print(session.getAttribute("mensajeSolicitud"));
-                    session.setAttribute("mensajeSolicitud", "");
-                    %>
+                        
                         <div class="panel panel-default paneles">
+                            <h3 class="text-center">Conversacion</h3>
                             <div class="panel-body">
                                 
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Solicitud de Servicio</h3>
+                                        <div class="panel-title">Conversacion Activa</div>
                                     </div>
-                                    <div class="panel-body text-justify">
-                                        <p>Para el campo de mensaje se tiene un maximo de <a class="black">200</a> caracteres.</p>
-                                        <br>
-                                        <!--<form class="form-horizontal text-left" enctype="multipart/form-data" action="cargarImagen.jsp" method="post" role="form">
-                                             <div class="form-group">
-                                                <% if (session.getAttribute("mensajeImagen") == null) {
-                                                        session.setAttribute("mensajeImagen", "");
-                                                    }
-                                                    out.print(session.getAttribute("mensajeImagen"));
-                                                    session.setAttribute("mensajeImagen", "");
-                                                %>
-                                                <label for="evidencia" class="col-md-2 col-md-offset-1 control-label text-left">Evidencia<a class="red"> *</a> :</label>
-                                                <div class="col-md-7">
-                                                    <input type="file" name="evidencia" class="form-control" id="evidencia" placeholder="Elija una imagen con el error encontrado">
-                                                     
-                                                </div>
-                                            
-                                            <div class="col-md-2 col-md-offset-0">
-                                               <button class="btn btn-primary btn-sm" name="requerimiento" type="submit">Cargar</button>
-                                            </div>
-                                            </div>
-                                        </form>-->
-                                        <form class="form-horizontal text-left" action="leerSolicitud.jsp" method="post" role="form">
+                                    <div class="panel-body">
+                                        <p>Conversacion con <strong><% out.println(session.getAttribute("nombreUsuario").toString()); %>.</strong></p>
+                                                
+                                        <% out.println(session.getAttribute("conversacion").toString()); %>
+                                        <form class="form-horizontal" action="leerConversacionUser.jsp" method="post">
                                             <div class="form-group">
-                                                <label for="titulo" class="col-md-3 control-label text-left">Solicitud<a class="red"> *</a> :</label>
-                                                <div class="col-md-8 col-md-offset-1">
-                                                    <input type="text" name="titulo" class="form-control" id="mensaje" placeholder="Generalice su necesidad">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="mensaje" class="col-md-3 control-label text-left">Mensaje<a class="red"> *</a> :</label>
-                                                <div class="col-md-8 col-md-offset-1">
-                                                    <textarea type="text" name="mensaje" class="form-control" id="mensaje" rows="3" placeholder="Describa la necesidad o asistencia requerida"></textarea>
+                                                <div class="col-md-8 col-md-offset-2">
+                                                    <p>Limite de <strong>1000</strong> caracteres.</p>
+                                                      <textarea type="text" name="mensaje" class="form-control" id="mensaje" rows="3" placeholder="Escriba aqui su mensaje"></textarea>
                                                 </div>
                                             </div>
                                             <div align="center">
-                                                <button class="btn btn-primary" name="requerimiento" type="submit">Reportar</button>
-                                            </div>
-                                        </form>
-                                        
-                                        <br>
-                                        <form action="solicitar.jsp">
-                                            <div align="center">
-                                                <button class="btn btn-danger" name="requerimiento" type="submit">Cancelar</button>
+                                                <button class="btn btn-info" name="requerimiento" type="submit">Enviar</button>
                                             </div>
                                         </form>
                                     </div>

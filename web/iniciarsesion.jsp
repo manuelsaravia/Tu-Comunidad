@@ -30,13 +30,18 @@ background-size: cover;
             <div class="row">
                 <br>
                 <div class="col-md-12">
-                    <div class="col-lg-1 col-lg-offset-11" align="right">
+                    <div class="col-lg-3" align="left">
+                        <div class="alert alert-info">
+                            <h5>Contamos con <strong><%out.println(session.getAttribute("usuarios").toString()); %> </strong>Usuarios Registrados</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-lg-offset-8" align="right">
                         <a href="registrarUsuario.jsp" class="btn btn-info" type="button"><strong>Registrate</strong></a>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <br><br><br><br><br>
+                <br><br><br>
                 <div class="col-md-4 col-md-offset-4">
                     <% if (session.getAttribute("mensajeInicio") == null) {
                         session.setAttribute("mensajeInicio", "");

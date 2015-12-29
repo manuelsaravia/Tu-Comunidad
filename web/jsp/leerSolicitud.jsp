@@ -15,6 +15,8 @@
     asesoria.setDescripcion(request.getParameter("mensaje"));
     
     String respuesta = facade.registrarAsesoria(user,asesoria);
+    int ser = Integer.parseInt(session.getAttribute("procesos").toString()) + 1;
+    session.setAttribute("procesos", ser);
     String msg="<div class=\"alert alert-info\" role=\"alert\"><strong>"+"Solicitud enviada exitosamente"+"</strong></div>";
             session.setAttribute("mensajeSolicitud", msg);
             response.sendRedirect("solicitar.jsp");

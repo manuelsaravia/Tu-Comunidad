@@ -16,22 +16,38 @@
     user.setContrasenia(contrasenia);
     System.err.println(user.getCorreo());
     System.err.println(user.getContrasenia());
-    String respuesta = facade.validarSesion(user);
-    System.err.println(respuesta);
-    if(!respuesta.equals("error")){
-        String datos[] = respuesta.split(";");
-        session.setAttribute("idUsuario",datos[0]);
-        session.setAttribute("nombre",datos[1]);
-        session.setAttribute("correo",user.getCorreo());
-        session.setAttribute("contrasenia",user.getContrasenia());
-        session.setAttribute("visitas",datos[3]);
-        session.setAttribute("tipo",datos[4]);
-        
-        response.sendRedirect("jsp/principalUsuario.jsp");
+    if(correo.equals("tucomunidad@tucomunidadcolombia.co")){
+        boolean sw = facade.validarSesionAdmin(user);
+        if(sw){
+            session.setAttribute("idAdmin", "1");
+            response.sendRedirect("jsp/cargarTabla.jsp?req=NotiImagen-principalAdministrador-noticias");
+        }
+        else{
+            String msg="<div class=\"alert alert-info\" role=\"alert\"><strong>"+"Ha ocurrido un error a la hora de iniciar sesion, Verifique los datos registrados"+"</strong></div>";
+            session.setAttribute("mensajeInicio", msg);
+            response.sendRedirect("iniciarsesion.jsp");
+        }
     }
     else{
-        String msg="<div class=\"alert alert-info\" role=\"alert\"><strong>"+"Ha ocurrido un error a la hora de iniciar sesion, Verifique los datos registrados"+"</strong></div>";
-        session.setAttribute("mensajeInicio", msg);
-        response.sendRedirect("iniciarsesion.jsp");
+        String respuesta = facade.validarSesion(user);
+        System.err.println(respuesta);
+        if(!respuesta.equals("error")){
+            String datos[] = respuesta.split(";");
+            session.setAttribute("idUsuario",datos[0]);
+            session.setAttribute("nombre",datos[1] + " " + datos[2]);
+            session.setAttribute("correo",user.getCorreo());
+            session.setAttribute("contrasenia",user.getContrasenia());
+            session.setAttribute("visitas",datos[3]);
+            session.setAttribute("tipo",datos[4]);
+            session.setAttribute("procesos", datos[5]); 
+        
+            response.sendRedirect("jsp/cargarTabla.jsp?req=NotiImagen-principalUsuario-noticias");
+        }
+        else{
+            String msg="<div class=\"alert alert-info\" role=\"alert\"><strong>"+"Ha ocurrido un error a la hora de iniciar sesion, Verifique los datos registrados"+"</strong></div>";
+            session.setAttribute("mensajeInicio", msg);
+            response.sendRedirect("iniciarsesion.jsp");
+        }
     }
+    
     %>

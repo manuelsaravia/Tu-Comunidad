@@ -5,5 +5,5 @@
 --%>
 
 <%
-    response.sendRedirect("iniciarsesion.jsp");
+    response.sendRedirect("cargarInicio.jsp");
     %>

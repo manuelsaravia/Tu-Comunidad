@@ -1,6 +1,6 @@
 <%-- 
-    Document   : principalUsuario
-    Created on : 24/11/2015, 05:11:38 PM
+    Document   : publicosUsuario
+    Created on : 27/12/2015, 01:26:01 PM
     Author     : Manuel
 --%>
 
@@ -12,10 +12,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="../diseno/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../diseno/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../diseno/css/style.css">
-        <link rel="shortcut icon" href="../diseno/images/favicon.png">
+        <link rel="stylesheet" type="text/css" href="../../diseno/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../diseno/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../diseno/css/style.css">
+        <link rel="shortcut icon" href="../../diseno/images/favicon.png">
 
 
 		
@@ -31,18 +31,18 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand">
-                            <img alt="Brand" src="../diseno/images/favicon.png" width="70%">
+                            <img alt="Brand" src="../../diseno/images/favicon.png" width="70%">
                         </a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="cargarTabla.jsp?req=NotiImagen-principalUsuario-noticias">Inicio<span class="sr-only">(current)</span></a></li>
-                            <li><a href="cargarMensajesUsuario.jsp">Mensajes</a></li>
+                            <li><a href="../cargarTabla.jsp?req=NotiImagen-principalUsuario-noticias">Inicio<span class="sr-only">(current)</span></a></li>
+                            
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a><% out.println(session.getAttribute("nombre").toString()); %></a></li>
-                            <li class="blue"><a href="../iniciarsesion.jsp" class="blue">Cerrar Sesion</a></li>
+                            <li class="blue"><a href="../../iniciarsesion.jsp" class="blue">Cerrar Sesion</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
@@ -84,17 +84,17 @@
                                     <ul class="nav nav-pills">
                                         <li>Derechos
                                             <ul>
-                                                <li><a href="cargarTabla.jsp?req=Constitucionales-derechos/constitucionalesUsuario-constitucionales" class="black">Constitucionales</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Administrativos-derechos/administrativosUsuario-administrativos" class="black">Administrativos</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Penales-derechos/penalesUsuario-penales" class="black">Penales</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Procesales-derechos/procesalesUsuario-procesales" class="black">Procesales</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Financieros-derechos/financierosUsuario-financieros" class="black">Financieros</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Tributarios-derechos/tributariosUsuario-tributarios" class="black">Tributarios</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Civiles-derechos/civilesUsuario-civiles" class="black">Civiles</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Mercantiles-derechos/mercantilesUsuario-mercantiles" class="black">Mercantiles</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Laborales-derechos/laboralesUsuario-laborales" class="black">Laborales</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Inter_Publicos-derechos/publicosUsuario-publicos" class="black">Internacionales Publicos</a></li>
-                                                <li><a href="cargarTabla.jsp?req=Inter_Privados-derechos/privadosUsuario-privados" class="black">Internacionales Privados</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Constitucionales-derechos/constitucionalesUsuario-constitucionales" class="black">Constitucionales</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Administrativos-derechos/administrativosUsuario-administrativos" class="black">Administrativos</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Penales-derechos/penalesUsuario-penales" class="black">Penales</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Procesales-derechos/procesalesUsuario-procesales" class="black">Procesales</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Financieros-derechos/financierosUsuario-financieros" class="black">Financieros</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Tributarios-derechos/tributariosUsuario-tributarios" class="black">Tributarios</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Civiles-derechos/civilesUsuario-civiles" class="black">Civiles</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Mercantiles-derechos/mercantilesUsuario-mercantiles" class="black">Mercantiles</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Laborales-derechos/laboralesUsuario-laborales" class="black">Laborales</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Inter_Publicos-derechos/publicosUsuario-publicos" class="black">Internacionales Publicos</a></li>
+                                                <li><a href="../cargarTabla.jsp?req=Inter_Privados-derechos/privadosUsuario-privados" class="black">Internacionales Privados</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -104,8 +104,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="panel panel-default paneles">
+                            <h2 class="text-center">Derechos Internacionales Publicos</h2>
                             <div class="panel-body">
                                 <% out.println(session.getAttribute("tabla").toString());  %>
+                                
                             </div>
                         </div>
                         
@@ -114,7 +116,7 @@
                         <div class="panel panel-default paneles">
                             <div class="panel-body">
                                 <h4>Solicitud de Servicio</h4>
-                                <form action="solicitar.jsp" method="post">
+                                <form action="../solicitar.jsp" method="post">
                                     <div align="center">
                                         <button class="btn btn-info" type="submit">Solicitar</button>
                                     </div>
@@ -122,20 +124,20 @@
                                 
                             </div>
                         </div>
-                        <img src="../diseno/images/abogado.jpg" class="img-responsive" width="100%">
+                        <img src="../../diseno/images/abogado.jpg" class="img-responsive" width="100%">
                         <br>
-                        <img src="../diseno/images/abogado.jpg" class="img-responsive" width="100%">
+                        <img src="../../diseno/images/abogado.jpg" class="img-responsive" width="100%">
                        
                     </div>
                 </div>
             </div>
              <div class="top-centro" align="center">
-                            <img src="../diseno/images/logo-compressor.png" width="100%">
+                            <img src="../../diseno/images/logo-compressor.png" width="100%">
                         </div>
             
             
-            <script src="../diseno/js/jquery.js"></script>
-            <script src="../diseno/js/bootstrap.min.js"></script>
+            <script src="../../diseno/js/jquery.js"></script>
+            <script src="../../diseno/js/bootstrap.min.js"></script>
            
         </body>
 </html>
